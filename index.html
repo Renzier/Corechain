@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meta Quest Tower Defense</title>
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <!-- A-Frame Extras for movement controls -->
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <script src="game.js"></script>
+  </head>
+  <body>
+    <a-scene game-manager background="color: #050505">
+      <a-assets>
+        <!-- Placeholder for dark cyberpunk music. Using a synthesized hum/drone as a placeholder for actual music asset -->
+        <audio id="bgm" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay loop></audio>
+      </a-assets>
+
+      <!-- Ambient Sound -->
+      <a-entity sound="src: #bgm; autoplay: true; loop: true; volume: 0.5"></a-entity>
+
+      <!-- Player Rig for First-Person and Controller navigation -->
+      <a-entity id="rig" movement-controls="fly: true; speed: 0.3" position="0 1.6 5">
+        <a-camera position="0 0 0" look-controls="pointerLockEnabled: false">
+          <!-- Add a cursor for placing towers -->
+          <a-entity cursor="rayOrigin: mouse" raycaster="objects: .placeable"></a-entity>
+        </a-camera>
+        <!-- VR Controllers -->
+        <a-entity laser-controls="hand: left" raycaster="objects: .placeable; far: 20"></a-entity>
+        <a-entity laser-controls="hand: right" raycaster="objects: .placeable; far: 20"></a-entity>
+      </a-entity>
+
+      <!-- Tron-like grid floor -->
+      <a-plane width="100" height="100" rotation="-90 0 0" material="color: #000000; emissive: #003366; wireframe: true; wireframeLinewidth: 2" class="placeable"></a-plane>
+
+      <!-- Central Core (A Glowing repository of light and energy) -->
+      <a-sphere id="core" radius="1" position="0 1 0"
+                material="color: #00ffff; emissive: #00ffff; emissiveIntensity: 1; transparent: true; opacity: 1">
+        <a-light type="point" color="#00ffff" intensity="2" distance="10" position="0 0 0"></a-light>
+      </a-sphere>
+
+    </a-scene>
+  </body>
+</html>
