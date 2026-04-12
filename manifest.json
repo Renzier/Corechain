@@ -1,0 +1,21 @@
+{
+  "name": "Tower Defense VR",
+  "short_name": "Tower Defense",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#00ffff",
+  "description": "A Tron-inspired first-person VR tower defense game for Meta Quest.",
+  "icons": [
+    {
+      "src": "https://cdn.aframe.io/images/aframe-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.aframe.io/images/aframe-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
