@@ -58,7 +58,15 @@ Here is the exact step-by-step guide to get your APK in under 10 minutes:
    - Delete the Cylinder from the scene.
    - Select your XR Controller again, and drag your new Tower prefab into the `Tower Prefab` slot on the `TowerPlacement` script.
 
-### Step 4: Build the APK!
+### Step 4: Test in the Unity Editor (Optional but Recommended)
+Before building the final app, it's a good idea to test it! Unity makes this easy.
+1. **Without a Headset:** Look at the very top-middle of the Unity window and press the **Play Button** (►).
+   - The game will start running in the "Game" tab.
+   - You will see the bugs spawning and moving toward the core.
+   - Because of the script update we just did, you can simply **Left-Click your mouse** anywhere on the floor to place a tower!
+2. **With a Headset (Quest Link):** If you plug your Quest into your PC with a USB-C cable and enable "Quest Link" inside the headset, pressing the **Play Button** (►) in Unity will instantly launch the game into your headset so you can test it in full VR without waiting for an APK to build!
+
+### Step 5: Build the APK!
 1. Before building, press **Ctrl + S** (or Cmd + S) to save your Scene. Give it a name like `GameScene`.
 2. Go to **File** -> **Build Profiles** (or **Build Settings** in older versions).
 3. Select **Android** on the left.
