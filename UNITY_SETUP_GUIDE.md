@@ -61,9 +61,11 @@ Here is the exact step-by-step guide to get your APK in under 10 minutes:
    - Select your XR Controller again, and drag your new Tower prefab into the `Tower Prefab` slot on the `TowerPlacement` script.
 
 ### Step 4: Build the APK!
-1. Go to **File** -> **Build Profiles** (or **Build Settings** in older versions).
-2. Select **Android** on the left.
-3. Make sure your Meta Quest is plugged into your PC, and select it from the "Run Device" dropdown.
-4. Click **Build and Run**!
+1. Before building, press **Ctrl + S** (or Cmd + S) to save your Scene. Give it a name like `GameScene`.
+2. Go to **File** -> **Build Profiles** (or **Build Settings** in older versions).
+3. Select **Android** on the left.
+4. Very Important: Click the **Add Open Scenes** button at the top of that window! If you don't do this, your APK will build an empty void.
+5. Make sure your Meta Quest is plugged into your PC, and select it from the "Run Device" dropdown.
+6. Click **Build and Run**!
 
 Unity will now compile the scripts, generate the `.apk`, and automatically push it directly into your Meta Quest headset! You can find it under your "Unknown Sources" tab in the App Library.

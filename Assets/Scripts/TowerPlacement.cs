@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-// Requires Unity's Input System and XR Interaction Toolkit (default in VR Template)
+// Requires Unity's Input System (default in VR Template)
 public class TowerPlacement : MonoBehaviour
 {
     public GameObject towerPrefab;
@@ -10,28 +9,18 @@ public class TowerPlacement : MonoBehaviour
 
     [Header("Input Setup")]
     public InputActionProperty triggerAction; // Assign the trigger pull action in Inspector
-    private XRRayInteractor rayInteractor;
-
-    void Start()
-    {
-        rayInteractor = GetComponent<XRRayInteractor>();
-    }
 
     void Update()
     {
         // 1. Check if user pulled the trigger this frame
         if (triggerAction.action != null && triggerAction.action.WasPressedThisFrame())
         {
-            if (GameManager.Instance.coreManager.currentHealth <= 0) return;
+            if (GameManager.Instance != null && GameManager.Instance.coreManager.currentHealth <= 0) return;
 
-            // 2. Check if the XR Ray Interactor is pointing at the floor
-            if (rayInteractor != null && rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
+            // 2. Shoot a standard physics ray forward from the controller
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100f, placeableLayer))
             {
-                // Ensure we hit the designated floor layer
-                if (((1 << hit.collider.gameObject.layer) & placeableLayer) != 0)
-                {
-                    PlaceTower(hit.point);
-                }
+                PlaceTower(hit.point);
             }
         }
 
