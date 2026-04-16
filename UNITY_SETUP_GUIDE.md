@@ -49,10 +49,8 @@ Here is the exact step-by-step guide to get your APK in under 10 minutes:
    - In the top right of the Inspector, click the **Layer** dropdown and select `Add Layer...`. Type `Floor` into an empty slot.
    - Select your Plane again and assign its Layer to your new `Floor` layer.
    - Find your **Right Controller** in the Hierarchy (usually under `XR Origin` -> `Camera Offset`).
-   - Ensure the Right Controller has an `XR Ray Interactor` component attached.
    - Drag the `TowerPlacement.cs` script onto the Right Controller.
    - In the Tower Placement script inspector, change the `Placeable Layer` dropdown to `Floor`.
-   - For `Trigger Action`, click the little gear/target icon next to it, search for `XRI RightHand Interaction/Select`, and select it. This wires up your Quest trigger button!
 5. **Create the Tower Prefab:**
    - Create a Cylinder in the scene. Name it `Tower`.
    - Drag the `Tower.cs` script onto it.
